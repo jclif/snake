@@ -7,8 +7,8 @@
   }
 
   Snake.prototype.move = function() {
-    var headRow = this.segments[0][0];
-    var headCol = this.segments[0][1];
+    var headRow = this.segments[this.segments.length - 1][0];
+    var headCol = this.segments[this.segments.length - 1][1];
 
     switch (this.dir) {
     case "N":
@@ -24,7 +24,9 @@
       this.segments.push([headRow, headCol - 1])
       break;
     }
+  }
 
+  Snake.prototype.shrink = function() {
     this.segments.shift();
   }
 

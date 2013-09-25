@@ -1,18 +1,18 @@
 <html>
 <head>
   <script src="jquery-1.10.2.js"></script>
-  <!-- <script src="underscore.js"></script> -->
   <script src="snake.js"></script>
   <script src="board.js"></script>
   <script src="ui.js"></script>
   <link href="snake.css" rel="stylesheet" type="text/css"></link>
 </head>
 <body>
-
+  <p>TIME: <span id="time"></span>   <span id="paused"></span></p>
+  <p>Score: <span id="score"></span></p>
   <script>
+  var view = new Game.SnakeUI(30);
 
   $(document).ready(function() {
-    var view = new Game.SnakeUI(9);
     view.start();
   })
 
